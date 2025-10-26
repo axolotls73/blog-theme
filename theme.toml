@@ -17,9 +17,3 @@ homepage = 'https://github.com/axolotls73/blog-theme'
 [author]
   name = 'Emily Tucker'
   homepage = 'https://axolotls73.github.io/'
-
-# If porting an existing theme
-[original]
-  author = "Shawn O'Hare"
-  homepage = 'http://www.shawnohare.com'
-  repo = 'https://github.com/loikein/hugo-tufte'
