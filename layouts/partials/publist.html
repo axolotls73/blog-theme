@@ -1,0 +1,20 @@
+<ul>
+  {{ range site.Data.publications }}
+    <li>
+      <strong>{{ .title }}</strong>
+      <br>
+      {{ replace .authors "Emily Tucker" "<u>Emily Tucker</u>" | safeHTML }}
+      <br>
+      <em>({{ .where }})</em>
+      {{ with .supplement }}
+        {{ . }}.
+      {{ end }}
+      {{ with .doi }}
+        <a href="{{ . }}" target="_blank">[doi]</a>
+      {{ end }}
+      {{ with .pdf }}
+        <a href="{{ print "/paper-pdfs/" . | relURL }}" target="_blank">[pdf]</a>
+      {{ end }}
+    </li>
+  {{ end }}
+</ul>

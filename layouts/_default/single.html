@@ -1,10 +1,29 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+    <section>
+        <h1>{{ .Title }}</h1>
+        {{ if .Params.subtitle }}
+            <p class="subtitle">{{ .Params.subtitle }}</p>
+        {{ end }}
 
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+        <p style="font-size: 1.2rem; color: #555; margin-top: -1rem; margin-bottom: 2rem;">
+            {{ if not .Date.IsZero }}
+                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            {{ end }}
+            {{ with .Params.author }}
+                &nbsp;&bull;&nbsp; By {{ . }}
+            {{ end }}
+        </p>
 
-  {{ .Content }}
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+        {{ .Content }}
+
+        {{ with .Params.tags }}
+            <p style="margin-top: 3rem; font-size: 1.2rem;">
+                Tags:
+                {{ range $index, $tag := . }}
+                    {{- if $index -}}, {{ end -}}
+                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+                {{ end }}
+            </p>
+        {{ end }}
+    </section>
 {{ end }}

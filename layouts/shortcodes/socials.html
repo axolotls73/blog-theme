@@ -1,0 +1,73 @@
+
+{{ $marginnote_id := .Get 0 | default (printf "mn-%d" .Ordinal) }}
+
+<label for="{{ $marginnote_id }}" class="margin-toggle">&#8853;</label>
+<input type="checkbox" id="{{ $marginnote_id }}" class="margin-toggle"/>
+<p>
+<div class="marginnote">
+<div class="social-icons-container">
+
+  {{ $emailIconPath := "/img/socials/email.svg" }}
+  {{ if and (and (index .Site.Params.socials "emailuser") (index .Site.Params.socials "emaildomain")) (fileExists (printf "static%s" $emailIconPath)) }}
+  <div class="social-icon-item">
+        <img src="{{ $emailIconPath | relURL }}" alt="Email icon" class="social-icon-svg" />
+    <span id="email-container" class="social-platform-name">first . last @gatech.edu</span>
+    <script>
+      (function() {
+        var user = '{{ delimit (collections.Reverse (split .Site.Params.socials.emailuser "")) "" }}';
+        var domain = '{{ .Site.Params.socials.emaildomain }}';
+        var email = user.split('').reverse().join('') + '@' + domain;
+        document.getElementById('email-container').innerHTML = email;
+      })();
+    </script>
+  </div>
+  {{ end }}
+
+  {{ $githubIconPath := "/img/socials/github.svg" }}
+  {{ if and (index .Site.Params.socials "github") (fileExists (printf "static%s" $githubIconPath)) }}
+  <div class="social-icon-item">
+    <a href="https://github.com/{{ index .Site.Params.socials "github" }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <img src="{{ $githubIconPath | relURL }}" alt="GitHub icon" class="social-icon-svg" />
+      <span class="social-platform-name">GitHub</span>
+    </a>
+  </div>
+  {{ end }}
+
+  {{ $orcidIconPath := "/img/socials/orcid.svg" }}
+  {{ if and (index .Site.Params.socials "orcid") (fileExists (printf "static%s" $orcidIconPath)) }}
+  <div class="social-icon-item">
+    <a href="https://orcid.org/{{ index .Site.Params.socials "orcid" }}" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+        <img src="{{ $orcidIconPath | relURL }}" alt="ORCID icon" class="social-icon-svg" />
+      <span class="social-platform-name">ORCID</span>
+    </a>
+  </div>
+  {{ end }}
+
+  {{ $googleScholarPath := "/img/socials/google-scholar.svg" }}
+  {{ if and (index .Site.Params.socials "google-scholar") (fileExists (printf "static%s" $googleScholarPath)) }}
+  <div class="social-icon-item">
+    <a href="https://scholar.google.com/citations?user={{ index .Site.Params.socials "google-scholar" }}" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+        <img src="{{ $googleScholarPath | relURL }}" alt="Google Scholar icon" class="social-icon-svg" />
+      <span class="social-platform-name">Google Scholar</span>
+    </a>
+  </div>
+  {{ end }}
+
+  {{ $ebirdPath := "/img/socials/bird.svg" }}
+  {{ if and (index .Site.Params.socials "ebird") (fileExists (printf "static%s" $ebirdPath)) }}
+  <div class="social-icon-item">
+    <a href="https://ebird.org/profile/{{ index .Site.Params.socials "ebird" }}" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+        <img src="{{ $ebirdPath | relURL }}" alt="bird icon" class="social-icon-svg" />
+      <span class="social-platform-name">eBird</span>
+    </a>
+  </div>
+  {{ end }}
+
+</div>
+
+<br>
+
+<img src="/img/me-cropped.jpg" width=60% />
+
+</div>
+</p>

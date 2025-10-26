@@ -1,8 +1,35 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+    <section>
+        {{ if .Content }}
+            <div class="content">
+                {{ .Content }}
+            </div>
+        {{ end }}
+
+        {{ if gt (len .Paginator.Pages) 0 }}
+            {{ range .Paginator.Pages }}
+                <h3 style="font-style: normal;"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                {{/*  {{ if .Params.subtitle }}
+                    <p>{{ .Params.subtitle }}</p>
+                {{ end }}  */}}
+                <p class="list-item-date" style="font-size: 1.1rem; color: #555;">
+                    {{ if not .Date.IsZero }}
+                        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                    {{ end }}
+                    {{ with .Params.tags }}
+                        | Tags:
+                        {{ range $index, $tag := . }}
+                            {{- if $index -}}, {{ end -}}
+                            <a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+                        {{ end }}
+                    {{ end }}
+                </p>
+            {{ end }}
+        {{ else }}
+            {{/* Execute this block if there are 0 pages */}}
+            <p>Nothing here yet!</p>
+        {{ end }}
+
+        {{ template "_internal/pagination.html" . }}
+    </section>
 {{ end }}

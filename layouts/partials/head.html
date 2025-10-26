@@ -1,5 +1,10 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
-{{ partialCached "head/css.html" . }}
-{{ partialCached "head/js.html" . }}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+{{ $styles := resources.Get "scss/main.scss" | toCSS }}
+{{/*  {{ $styles := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }}  */}}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+
+
+{{ if .Site.Params.Author }}<meta name="author" content="{{ .Site.Params.Author }}">{{ end }}
+{{ if .Description }}<meta name="description" content="{{ .Description }}">{{ else if .IsPage }}<meta name="description" content="{{ .Summary }}">{{ else if .Site.Params.description }}<meta name="description" content="{{ .Site.Params.description }}">{{ end }}

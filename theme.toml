@@ -1,7 +1,7 @@
-name = 'Theme name'
+name = 'hugo-tufte-ish'
 license = 'MIT'
-licenselink = 'https://github.com/owner/repo/LICENSE'
-description = 'Theme description'
+licenselink = 'https://github.com/axolotls73/blog-theme/blob/main/LICENSE'
+# description = 'Theme description'
 
 # The home page of the theme, where the source can be found
 homepage = 'https://github.com/axolotls73/blog-theme'
