@@ -6,11 +6,6 @@ $serif-fonts: "IBM Plex Serif", Georgia, serif;
 $sans-fonts: "IBM Plex Sans", system-ui, sans-serif;
 $mono-fonts: "IBM Plex Mono", monospace;
 
-/* Tufte CSS styles */
-html {
-    font-size: 15px;
-}
-
 body {
     width: 87.5%;
     margin-left: auto;
@@ -36,7 +31,7 @@ h1 {
     font-weight: 400;
     margin-top: 4rem;
     margin-bottom: 1.5rem;
-    font-size: 3.2rem;
+    font-size: 2.4rem;
     line-height: 1;
 }
 
@@ -45,14 +40,14 @@ h2 {
     font-weight: 400;
     margin-top: 2.1rem;
     margin-bottom: 1.4rem;
-    font-size: 2.2rem;
+    font-size: 1.7rem;
     line-height: 1;
 }
 
 h3 {
     font-style: italic;
     font-weight: 400;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     margin-top: 2rem;
     margin-bottom: 1.4rem;
     line-height: 1;
@@ -72,7 +67,7 @@ p.subtitle {
     font-style: italic;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     display: block;
     line-height: 1;
 }
@@ -85,10 +80,6 @@ p.subtitle {
     color: red;
 }
 
-article {
-    padding: 5rem 0rem;
-}
-
 section {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -98,12 +89,12 @@ p,
 dl,
 ol,
 ul {
-    font-size: 1.4rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 
 p {
-    margin-top: 1.4rem;
+    margin-top: 1.1rem;
     margin-bottom: 1.4rem;
     padding-right: 0;
     vertical-align: baseline;
@@ -134,7 +125,7 @@ div.epigraph > blockquote > footer > cite {
 /* end chapter epigraphs styles */
 
 blockquote {
-    font-size: 1.4rem;
+    font-size: 1rem;
     border-left: 2px solid currentColor;
     padding-left: 0.75rem;
 }
@@ -146,7 +137,7 @@ blockquote p {
 
 blockquote footer {
     width: 55%;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     text-align: right;
 }
 
@@ -178,7 +169,7 @@ figure {
     max-width: 55%;
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
-    margin: 0 0 3em 0;
+    margin: 0 0 1.4em 0;
 }
 
 figcaption {
@@ -186,7 +177,7 @@ figcaption {
     clear: right;
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     line-height: 1.6;
     vertical-align: baseline;
     position: relative;
@@ -217,7 +208,7 @@ img {
     width: 50%;
     margin-top: 0.3rem;
     margin-bottom: 0;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     line-height: 1.3;
     vertical-align: baseline;
     position: relative;
@@ -236,15 +227,15 @@ img {
 
 .sidenote-number:after {
     content: counter(sidenote-counter);
-    font-size: 1rem;
-    top: -0.5rem;
+    font-size: 0.8rem;
+    top: -0.4rem;
     left: 0.1rem;
 }
 
 .sidenote:before {
     content: counter(sidenote-counter) " ";
-    font-size: 1rem;
-    top: -0.5rem;
+    font-size: 0.8rem;
+    top: -0.4rem;
 }
 
 blockquote pre > code {
@@ -276,13 +267,13 @@ div.table-wrapper {
 
 code, pre > code {
     font-family: $mono-fonts;
-    font-size: 1.2rem;
+    font-size: inherit;
     line-height: 1.42;
     -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
 }
 
 .sans > code {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
 }
 
 h1 > code,
@@ -293,11 +284,11 @@ h3 > code {
 
 .marginnote > code,
 .sidenote > code {
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 pre > code {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     width: 52.5%;
     margin-left: 2.5%;
     overflow-x: auto;
@@ -430,7 +421,7 @@ label.margin-toggle:not(.sidenote-number) {
 
     .mobile-footnotes {
         margin-top: 2rem;
-        font-size: 0.95rem;
+        font-size: 0.7rem;
 
         ol {
             padding-left: 1.5rem;
