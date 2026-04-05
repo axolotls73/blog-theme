@@ -8,6 +8,10 @@ html {
 
 header {
     padding-top: 4rem;;
+
+    @media (max-width: 760px) {
+        padding-top: 2rem;
+    }
 }
 
 article {
