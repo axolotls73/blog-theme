@@ -2,9 +2,9 @@
 
 
 
-$serif-fonts: "IBM Plex Serif", "Noto Serif SC", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif, "Noto Emoji";
-$sans-fonts: "IBM Plex Sans", "Gill Sans", "Gill Sans MT", Calibri, sans-serif, "Noto Emoji";
-$mono-fonts: "IBM Plex Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace, "Noto Emoji";
+$serif-fonts: "IBM Plex Serif", Georgia, serif;
+$sans-fonts: "IBM Plex Sans", system-ui, sans-serif;
+$mono-fonts: "IBM Plex Mono", monospace;
 
 /* Tufte CSS styles */
 html {
