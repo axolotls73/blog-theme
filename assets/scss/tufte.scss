@@ -135,6 +135,8 @@ div.epigraph > blockquote > footer > cite {
 
 blockquote {
     font-size: 1.4rem;
+    border-left: 2px solid currentColor;
+    padding-left: 0.75rem;
 }
 
 blockquote p {
@@ -243,6 +245,11 @@ img {
     content: counter(sidenote-counter) " ";
     font-size: 1rem;
     top: -0.5rem;
+}
+
+blockquote pre > code {
+    margin-left: 0;
+    width: 100%;
 }
 
 blockquote .sidenote,
@@ -374,8 +381,8 @@ label.margin-toggle:not(.sidenote-number) {
     }
 
     blockquote {
-        margin-left: 1.5em;
-        margin-right: 0em;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     blockquote p,
