@@ -76,7 +76,7 @@ nav.main-navigation {
 }
 
 .social-icon-item {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4rem;
 
   .social-icon-svg {
     height: 1.3rem;
@@ -102,6 +102,66 @@ div.marginnote {
     position: relative;
 }
 
+
+hr.socials-divider {
+    display: none;
+}
+
+@media (max-width: 760px) {
+    hr.socials-divider {
+        display: block;
+    }
+}
+
+section.home-section {
+    display: grid;
+    grid-template-columns: 55% 27.25%;
+    column-gap: 5.75%;
+
+    > *:not(.socials-sidebar) {
+        grid-column: 1;
+        width: auto;
+    }
+}
+
+.socials-sidebar {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    font-size: 0.8rem;
+    line-height: 1.3;
+
+    .socials-photo {
+        width: 60%;
+        margin-top: 0.75rem;
+    }
+}
+
+@media (max-width: 760px) {
+    section.home-section {
+        display: block;
+    }
+
+    .socials-sidebar {
+        margin-top: 1.5rem;
+        width: 100%;
+
+        .social-icon-item {
+            margin-bottom: 0.4rem;
+
+            .social-icon-svg {
+                width: auto;
+                vertical-align: middle;
+            }
+        }
+
+        .socials-photo {
+            display: block;
+            width: 60%;
+            margin: 0.75rem auto 0;
+        }
+    }
+}
 
 .list-item-date {
     margin-bottom: 3rem;

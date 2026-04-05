@@ -1,10 +1,5 @@
 
-{{ $marginnote_id := .Get 0 | default (printf "mn-%d" .Ordinal) }}
-
-<label for="{{ $marginnote_id }}" class="margin-toggle">&#8853;</label>
-<input type="checkbox" id="{{ $marginnote_id }}" class="margin-toggle"/>
-<p>
-<div class="marginnote">
+<hr class="socials-divider" /><div class="socials-sidebar">
 <div class="social-icons-container">
 
   {{ $emailIconPath := "/img/socials/email.svg" }}
@@ -46,7 +41,7 @@
   {{ $googleScholarPath := "/img/socials/google-scholar.svg" }}
   {{ if and (index .Site.Params.socials "google-scholar") (fileExists (printf "static%s" $googleScholarPath)) }}
   <div class="social-icon-item">
-    <a href="https://scholar.google.com/citations?user={{ index .Site.Params.socials "google-scholar" }}" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+    <a href="https://scholar.google.com/citations?user={{ index .Site.Params.socials "google-scholar" }}" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
         <img src="{{ $googleScholarPath | relURL }}" alt="Google Scholar icon" class="social-icon-svg" />
       <span class="social-platform-name">Google Scholar</span>
     </a>
@@ -56,7 +51,7 @@
   {{ $ebirdPath := "/img/socials/bird.svg" }}
   {{ if and (index .Site.Params.socials "ebird") (fileExists (printf "static%s" $ebirdPath)) }}
   <div class="social-icon-item">
-    <a href="https://ebird.org/profile/{{ index .Site.Params.socials "ebird" }}" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+    <a href="https://ebird.org/profile/{{ index .Site.Params.socials "ebird" }}" target="_blank" rel="noopener noreferrer" aria-label="eBird">
         <img src="{{ $ebirdPath | relURL }}" alt="bird icon" class="social-icon-svg" />
       <span class="social-platform-name">eBird</span>
     </a>
@@ -65,9 +60,6 @@
 
 </div>
 
-<br>
-
-<img src="/img/me-cropped.jpg" width=60% />
+<img class="socials-photo" src="/img/me-cropped.jpg" />
 
 </div>
-</p>
