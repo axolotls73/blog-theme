@@ -383,8 +383,8 @@ label.margin-toggle:not(.sidenote-number) {
         width: 100%;
     }
 
-    label.margin-toggle:not(.sidenote-number) {
-        display: inline;
+    label.margin-toggle {
+        display: none;
     }
 
     .sidenote,
@@ -392,16 +392,58 @@ label.margin-toggle:not(.sidenote-number) {
         display: none;
     }
 
-    .margin-toggle:checked + .sidenote,
-    .margin-toggle:checked + .marginnote {
+    .figure-note {
         display: block;
-        float: left;
-        left: 1rem;
-        clear: both;
-        width: 95%;
-        margin: 1rem 2.5%;
-        vertical-align: baseline;
+        float: none;
+        width: 100%;
+        margin: 0.5rem 0;
+        padding: 0.25rem 0.75rem;
+        border-left: 2px solid currentColor;
+        opacity: 0.75;
         position: relative;
+        left: auto;
+    }
+
+    figure {
+        display: flex;
+        flex-direction: column;
+    }
+
+    figure img {
+        order: 1;
+    }
+
+    figure .figure-note {
+        order: 2;
+    }
+
+    .fn-ref a {
+        text-decoration: none;
+    }
+
+    .mobile-footnotes {
+        margin-top: 2rem;
+        font-size: 0.95rem;
+
+        ol {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .fn-back {
+            text-decoration: none;
+            margin-left: 0.25rem;
+        }
+
+        li img {
+            display: block;
+            max-width: 100%;
+            margin-top: 0.5rem;
+        }
     }
 
     label {
