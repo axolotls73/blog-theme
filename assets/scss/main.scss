@@ -168,6 +168,39 @@ section.home-section {
     }
 }
 
+.publist {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+  width: 55%;
+
+  .pub-venue {
+    white-space: nowrap;
+    padding-top: 0.1rem;
+    text-align: right;
+  }
+
+  .pub-details {
+    line-height: 1.5;
+  }
+
+  @media (max-width: 760px) {
+    width: 100%;
+    grid-template-columns: 1fr;
+    row-gap: 0;
+
+    .pub-venue {
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+
+    .pub-details {
+      margin-top: 0.25rem;
+    }
+  }
+}
+
 .post-meta {
     font-size: 0.9rem;
     color: #555;
