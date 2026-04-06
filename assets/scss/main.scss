@@ -253,6 +253,20 @@ section.home-section {
   }
 }
 
+// Display math: the auto-render wraps it in a bare span; make that block and
+// constrain to body column width (matches section > p)
+section > span:has(> .katex-display) {
+    display: block;
+    width: 55%;
+    overflow-x: auto;
+}
+
+@media (max-width: 760px) {
+    section > span:has(> .katex-display) {
+        width: 100%;
+    }
+}
+
 .post-meta {
     font-size: 0.9rem;
     color: #555;

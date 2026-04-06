@@ -9,5 +9,11 @@
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
 
 
+{{ if .Params.math }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
+{{ end }}
 {{ if .Site.Params.Author }}<meta name="author" content="{{ .Site.Params.Author }}">{{ end }}
 {{ if .Description }}<meta name="description" content="{{ .Description }}">{{ else if .IsPage }}<meta name="description" content="{{ .Summary }}">{{ else if .Site.Params.description }}<meta name="description" content="{{ .Site.Params.description }}">{{ end }}
