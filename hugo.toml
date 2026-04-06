@@ -6,3 +6,16 @@ title = 'My New Hugo Site'
   [module.hugoVersion]
     extended = true
     min = "0.141.0"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [["$$", "$$"]]
+    inline = [["$", "$"]]
+
+# this doesn't propagate to the site but putting it here too
+[markup.highlight]
+  noClasses = false

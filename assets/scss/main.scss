@@ -1,5 +1,6 @@
 
 @import "tufte";
+@import "syntax";
 
 
 html {
@@ -251,6 +252,31 @@ section.home-section {
       margin-top: 0.15rem;
     }
   }
+}
+
+// Code blocks: constrain to body column width and strip Chroma's inline background
+section > div.highlight,
+section > pre {
+    width: 55%;
+}
+
+blockquote > div.highlight,
+blockquote > pre {
+    width: 55%;
+}
+
+.highlight,
+pre {
+    background: transparent !important;
+}
+
+@media (max-width: 760px) {
+    section > div.highlight,
+    section > pre,
+    blockquote > div.highlight,
+    blockquote > pre {
+        width: 100%;
+    }
 }
 
 // Display math: the auto-render wraps it in a bare span; make that block and

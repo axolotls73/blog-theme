@@ -6,6 +6,10 @@ $serif-fonts: "IBM Plex Serif", Georgia, serif;
 $sans-fonts: "IBM Plex Sans", system-ui, sans-serif;
 $mono-fonts: "IBM Plex Mono", monospace;
 
+$code-inline-size: 1rem;
+$code-block-size: .85rem;
+$code-blockquote-size: .85rem;
+
 body {
     width: 87.5%;
     margin-left: auto;
@@ -241,6 +245,7 @@ img {
 blockquote pre > code {
     margin-left: 0;
     width: 100%;
+    font-size: $code-blockquote-size;
 }
 
 blockquote .sidenote,
@@ -267,7 +272,7 @@ div.table-wrapper {
 
 code, pre > code {
     font-family: $mono-fonts;
-    font-size: inherit;
+    font-size: $code-inline-size;
     line-height: 1.42;
     -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
 }
@@ -288,9 +293,7 @@ h3 > code {
 }
 
 pre > code {
-    font-size: 0.7rem;
-    width: 52.5%;
-    margin-left: 2.5%;
+    font-size: $code-block-size;
     overflow-x: auto;
     display: block;
 }
