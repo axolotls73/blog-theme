@@ -4,16 +4,11 @@
   <div class="pub-details">
     <strong>{{ .title }}</strong><br>
     {{ replace .authors "Emily Tucker" "<u>Emily Tucker</u>" | safeHTML }}
-    {{ with .supplement }}
-      <br><em>{{ . }}</em>
-    {{ end }}
-    <br>
-    {{ with .doi }}
-      <a href="{{ . }}" target="_blank">[doi]</a>
-    {{ end }}
-    {{ with .pdf }}
-      <a href="{{ print "/paper-pdfs/" . | relURL }}" target="_blank">[pdf]</a>
-    {{ end }}
+  </div>
+  <div class="pub-marginnote">
+    {{ with .supplement }}<em>{{ . }}</em><br>{{ end }}
+    {{ with .doi }}<a href="{{ . }}" target="_blank">[doi]</a> {{ end }}
+    {{ with .pdf }}<a href="{{ print "/paper-pdfs/" . | relURL }}" target="_blank">[pdf]</a>{{ end }}
   </div>
   {{ end }}
 </div>

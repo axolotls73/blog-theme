@@ -170,10 +170,9 @@ section.home-section {
 
 .publist {
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: max-content minmax(0, calc(55% - 9em - 2rem)) 27.25%;
   column-gap: 2rem;
   row-gap: 1.5rem;
-  width: 55%;
 
   .pub-venue {
     white-space: nowrap;
@@ -185,8 +184,13 @@ section.home-section {
     line-height: 1.5;
   }
 
+  .pub-marginnote {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    padding-top: 0.2rem;
+  }
+
   @media (max-width: 760px) {
-    width: 100%;
     grid-template-columns: 1fr;
     row-gap: 0;
 
@@ -197,6 +201,11 @@ section.home-section {
 
     .pub-details {
       margin-top: 0.25rem;
+    }
+
+    .pub-marginnote {
+      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
     }
   }
 }
