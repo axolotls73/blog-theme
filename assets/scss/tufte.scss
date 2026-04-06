@@ -10,6 +10,14 @@ $code-inline-size: 1rem;
 $code-block-size: .85rem;
 $code-blockquote-size: .85rem;
 
+strong {
+    font-weight: 600;
+}
+
+h2.no-italic {
+    font-style: normal;
+}
+
 body {
     width: 87.5%;
     margin-left: auto;
