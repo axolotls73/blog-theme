@@ -230,24 +230,23 @@ img {
     counter-increment: sidenote-counter;
 }
 
+// Plex Serif's superscript numerals (OpenType sups) are already sized and raised
 .sidenote-number:after,
 .sidenote:before {
-    font-family: et-book-roman-old-style;
-    position: relative;
+    font-family: $serif-fonts;
+    font-variant-position: super;
     vertical-align: baseline;
 }
 
 .sidenote-number:after {
     content: counter(sidenote-counter);
-    font-size: 0.8rem;
-    top: -0.4rem;
-    left: 0.1rem;
 }
 
+// No trailing space in content: Firefox only uses sups glyphs if every
+// character has one, and the space doesn't
 .sidenote:before {
-    content: counter(sidenote-counter) " ";
-    font-size: 0.8rem;
-    top: -0.4rem;
+    content: counter(sidenote-counter);
+    margin-right: 0.25em;
 }
 
 blockquote pre > code {
@@ -424,6 +423,13 @@ label.margin-toggle:not(.sidenote-number) {
 
     figure .figure-note {
         order: 2;
+    }
+
+    // Use Plex Serif's sups glyphs instead of <sup>'s shrunk-and-raised digits
+    .fn-ref {
+        font-size: inherit;
+        vertical-align: baseline;
+        font-variant-position: super;
     }
 
     .fn-ref a {
