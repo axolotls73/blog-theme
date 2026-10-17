@@ -247,6 +247,8 @@ img {
 .sidenote:before {
     content: counter(sidenote-counter);
     margin-right: 0.25em;
+    // match the size of the number in the body text
+    font-size: 1rem;
 }
 
 blockquote pre > code {

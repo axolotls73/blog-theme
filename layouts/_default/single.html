@@ -14,7 +14,7 @@
             {{ end }}
         </p>
 
-        {{ .Content }}
+        {{ .Content | replaceRE `\s+(<label for="[^"]*" class="margin-toggle sidenote-number")` "$1" | safeHTML }}
 
         {{ with .Params.tags }}
             <p style="margin-top: 3rem; font-size: 1.2rem;">
