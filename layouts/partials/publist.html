@@ -8,7 +8,8 @@
   <div class="pub-marginnote">
     {{ with .supplement }}<em>{{ . }}</em><br>{{ end }}
     {{ with .doi }}<a href="{{ . }}" target="_blank">[doi]</a> {{ end }}
-    {{ with .pdf }}<a href="{{ print "/paper-pdfs/" . | relURL }}" target="_blank">[pdf]</a>{{ end }}
+    {{ with .pdf }}<a href="{{ print "/paper-pdfs/" . | relURL }}" target="_blank">[pdf]</a> {{ end }}
+    {{ with .slides }}<a href="{{ print "/paper-pdfs/" . | relURL }}" target="_blank">[slides]</a>{{ end }}
   </div>
   {{ end }}
 </div>
