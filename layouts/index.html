@@ -1,9 +1,10 @@
 {{ define "main" }}
 
 <section class="home-section">
-    {{ if .Content }}
-            {{ .Content }}
-    {{ end }}
+    <div class="home-content">
+        {{ .Content }}
+    </div>
+    {{ partial "socials.html" . }}
 </section>
 
 
